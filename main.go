@@ -23,5 +23,5 @@ func main() {
 
 	fmt.Println(Com.GetSuitMap(table1))
 
-	//Cd.CountEqCard(Danches.Cards[1], "♠21")
+	//Cd.CountEqCard(Danches.Cards[1], "♠")
 }
