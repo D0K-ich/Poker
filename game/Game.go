@@ -1,6 +1,7 @@
 package game
 
 import (
+	Com "Poker/Combinations"
 	Deck "Poker/Deck"
 	Pl "Poker/Player"
 	Tb "Poker/Table"
@@ -29,6 +30,18 @@ func Startgame(table *Tb.Table, pl *Pl.Player) {
 	Turn(table)
 	River(*&table, *&pl)
 
+}
+
+func Endgame(pl *Pl.Player, t Tb.Table) {
+
+	Com.Double(*&pl)
+	Com.Triple(*&pl)
+	Com.Street(*&pl)
+	Com.Flash(*&pl, Com.GetSuitMap(t))
+	Com.Fullhouse(*&pl)
+	//*&pl.WinCombination = 666
+
+	fmt.Print(*&pl.WinCombination)
 }
 
 func Flop(table *Tb.Table) {

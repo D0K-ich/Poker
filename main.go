@@ -11,13 +11,24 @@ import (
 var MainDeck = Deck.CreateDeck()
 
 func main() {
-	table1 := Tab.CreateTables()
+	i := 0
+	for i == 0 {
+		table1 := Tab.CreateTables()
 
-	Danches := Pl.AddNewPlayer(1000, "Danches")
-	game.JoinPlayer(&Danches, &table1)
-	game.Startgame(&table1, &Danches)
+		Danches := Pl.AddNewPlayer(1000, "Danches")
 
-	Tab.ShowPlayers(table1)
+		game.JoinPlayer(&Danches, &table1)
+		game.Startgame(&table1, &Danches)
 
-	Com.Double(&Danches)
+		Com.SortCards(&Danches)
+
+		Tab.ShowPlayers(table1)
+
+		game.Endgame(&Danches, table1)
+
+		if Danches.WinCombination == 6 {
+			i = 1
+		}
+	}
+
 }
