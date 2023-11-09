@@ -1,11 +1,11 @@
-package combinations
+package Combinations
 
 import (
-	"fmt"
+	Pl "Poker/Player"
 	Tb "Poker/Table"
+	"fmt"
 	"sort"
 )
-
 
 func GetSuitMap(t Tb.Table) map[string]int {
 	suitmass := make([]string, 0)
@@ -23,8 +23,6 @@ func GetSuitMap(t Tb.Table) map[string]int {
 	for v := 0; v < len(usuitmass); v++ {
 		cardMass[usuitmass[v]] = CuclSuit(suitmass, usuitmass[v])
 	}
-
-	fmt.Println(cardMass)
 
 	return cardMass
 }
@@ -51,4 +49,34 @@ func removeDuplicates(arr []string) []string {
 	return result
 }
 
+func Flash(pl *Pl.Player, cm map[string]int) {
+	i := 0
+	for range cm {
 
+		if cm[pl.Cards[i].Suite] == 5 {
+			*&pl.WinCombination = 1
+		}
+		i++
+	}
+
+}
+
+func Double(pl *Pl.Player) {
+	i := 0
+	for range pl.Cards {
+		if pl.Cards[i].Rank == pl.Cards[i+1].Rank {
+			fmt.Print("Пара")
+		}
+		i++
+	}
+}
+
+func SortCards(pl *Pl.Player) {
+	i := 0
+	for range pl.Cards {
+		if pl.Cards[i].Rank > pl.Cards[i+1].Rank {
+			*&pl.Cards[i] = pl.Cards[i+1]
+		}
+		i++
+	}
+}

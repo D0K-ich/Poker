@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-	//Cd "Poker/Card"
 	Com "Poker/Combinations"
 	"Poker/Deck"
 	game "Poker/Game"
@@ -21,7 +19,5 @@ func main() {
 
 	Tab.ShowPlayers(table1)
 
-	fmt.Println(Com.GetSuitMap(table1))
-
-	//Cd.CountEqCard(Danches.Cards[1], "♠")
+	Com.Double(&Danches)
 }

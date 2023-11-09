@@ -52,5 +52,4 @@ func River(table *Tb.Table, p *Pl.Player) {
 	}
 
 	*&table.Players[0].Cards = p.Cards
-	
 }

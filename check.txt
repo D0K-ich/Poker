@@ -1,3 +1,0 @@
-	for j := 0; j < 5; j++{
-		Pl.GiveCard(*&p, Pl.Card(table.Cards[j]))
-	}

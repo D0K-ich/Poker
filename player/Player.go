@@ -1,18 +1,19 @@
-package player
+package Player
 
 //Deck "Poker/deck"
-import ()
+
 //"fmt"
 
 type Card struct {
 	Suite string
-	Rank string
+	Rank  string
 }
 
 type Player struct {
-	Cash int
-	Name string
-	Cards []Card
+	Cash           int
+	Name           string
+	Cards          []Card
+	WinCombination int
 }
 
 func GiveCard(pl1 *Player, Cards Card) {

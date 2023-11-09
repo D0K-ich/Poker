@@ -1,7 +1,0 @@
-	for k:=0;k<len(suitmass);k++ {
-		for j:=1;j<len(suitmass)-1;j++ {
-			if suitmass[j-1] == suitmass[j] {
-				suitmass = append(suitmass[:j-1], suitmass[j:]...)
-			}
-		}
-	}
