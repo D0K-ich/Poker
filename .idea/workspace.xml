@@ -4,18 +4,43 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf39b9a0-5979-4f82-96da-aa87b3293280" name="Changes" comment="Checl to work DB">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PokerDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+    <list default="true" id="bf39b9a0-5979-4f82-96da-aa87b3293280" name="Changes" comment="Check to work DB">
+      <change afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/models/models.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/packages/game/Game.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/packages/utilites/utilites.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/storage/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30c900bc-958e-42ac-9e91-9a0238182309.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30c900bc-958e-42ac-9e91-9a0238182309/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker_Data_Base" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/users.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerDB" beforeDir="false" afterPath="$PROJECT_DIR$/internal/storage/PokerDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/internal/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card/Cards.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/combinations/Combinations.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/packages/combinations/Combinations.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deck/Deck.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/Player.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/table/Table.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/packages/table/Table.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="d3bbb882-a3a8-4dac-b2ca-189c7beb6165" value="Rose" />
+    </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Program Files/Go" />
   <component name="Git.Settings">
@@ -24,42 +49,55 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2Yx876cEP6wyd6PAMd9Rf3S1l9o" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/Ov_da/Desktop/Poker/PokerDB",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;Go Build.go build Poker.executor&quot;: &quot;Run&quot;,
+    &quot;Go Build.go build Poker/cmd/app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ov_da&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ov_da\Desktop\Poker\internal\storage" />
+      <recent name="C:\Users\Ov_da\Desktop\Poker\internal\TMP" />
+      <recent name="C:\Users\Ov_da\Desktop\Poker\internal\docs" />
+      <recent name="C:\Users\Ov_da\Desktop\Poker\cmd\app" />
       <recent name="C:\Users\Ov_da\Desktop\Poker" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build Poker/cmd/app">
     <configuration name="go build Poker" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="Poker" />
       <working_directory value="$PROJECT_DIR$" />
@@ -79,9 +117,9 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build Poker" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+    <configuration name="go build Poker/cmd/app" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="Poker" />
-      <working_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/cmd/app" />
       <EXTENSION ID="net.ashald.envfile">
         <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
@@ -94,7 +132,7 @@
       </EXTENSION>
       <kind value="DIRECTORY" />
       <package value="Poker" />
-      <directory value="$PROJECT_DIR$" />
+      <directory value="$PROJECT_DIR$/cmd/app" />
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
@@ -139,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702901886549</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Check to work DB">
+      <option name="closed" value="true" />
+      <created>1702902831534</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702902831534</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +193,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Checl to work DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checl to work DB" />
+    <MESSAGE value="Check to work DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check to work DB" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

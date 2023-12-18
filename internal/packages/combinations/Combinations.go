@@ -1,20 +1,19 @@
 package Combinations
 
 import (
-	cd "Poker/Card"
-	Pl "Poker/Player"
-	Tb "Poker/Table"
+	"Poker/internal/models"
+
 	"sort"
 )
 
 var DD, trip = 0, 0
 
-func SortCards(pl *Pl.Player) {
+func SortCards(pl *models.Player) {
 	i := 0
 	j := 0
 	for i < len(pl.Cards)-1 {
 		for j < len(pl.Cards)-1 {
-			if cd.GetScore(*&pl.Cards[j]) > cd.GetScore(*&pl.Cards[j+1]) {
+			if (models.Card{}.GetScore(*&pl.Cards[j]) > models.Card{}.GetScore(*&pl.Cards[j+1])) {
 				*&pl.Cards[j], *&pl.Cards[j+1] = pl.Cards[j+1], pl.Cards[j]
 			}
 			j++
@@ -24,7 +23,7 @@ func SortCards(pl *Pl.Player) {
 	}
 }
 
-func GetSuitMap(t Tb.Table) map[string]int {
+func GetSuitMap(t models.Table) map[string]int {
 	suitmass := make([]string, 0)
 
 	for i := 0; i < len(t.Players[0].Cards); i++ {
@@ -66,7 +65,7 @@ func removeDuplicates(arr []string) []string {
 	return result
 }
 
-func Flash(pl *Pl.Player, cm map[string]int) {
+func Flash(pl *models.Player, cm map[string]int) {
 	i := 0
 	for range cm {
 
@@ -77,13 +76,13 @@ func Flash(pl *Pl.Player, cm map[string]int) {
 	}
 }
 
-func Street(pl *Pl.Player) {
+func Street(pl *models.Player) {
 	i := 0
 	for i < len(pl.Cards)-4 {
-		if cd.GetScore(pl.Cards[i])+1 == cd.GetScore(pl.Cards[i+1]) {
-			if cd.GetScore(pl.Cards[i+1])+1 == cd.GetScore(pl.Cards[i+2]) {
-				if cd.GetScore(pl.Cards[i+2])+1 == cd.GetScore(pl.Cards[i+3]) {
-					if cd.GetScore(pl.Cards[i+3])+1 == cd.GetScore(pl.Cards[i+4]) {
+		if (models.Card{}.GetScore(pl.Cards[i])+1 == models.Card{}.GetScore(pl.Cards[i+1])) {
+			if (models.Card{}.GetScore(pl.Cards[i+1])+1 == models.Card{}.GetScore(pl.Cards[i+2])) {
+				if (models.Card{}.GetScore(pl.Cards[i+2])+1 == models.Card{}.GetScore(pl.Cards[i+3])) {
+					if (models.Card{}.GetScore(pl.Cards[i+3])+1 == models.Card{}.GetScore(pl.Cards[i+4])) {
 						*&pl.WinCombination = 4
 					}
 				}
@@ -93,7 +92,7 @@ func Street(pl *Pl.Player) {
 	}
 }
 
-func Fullhouse(pl *Pl.Player) {
+func Fullhouse(pl *models.Player) {
 
 	i := 0
 	ch := 0

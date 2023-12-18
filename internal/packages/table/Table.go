@@ -1,26 +1,16 @@
 package Table
 
 import (
-	Pl "Poker/Player"
+	"Poker/internal/models"
 	"fmt"
 )
 
-type Card struct {
-	Suite string
-	Rank  string
-}
-
-type Table struct {
-	Cards   []Card
-	Players []Pl.Player
-}
-
-func CreateTables() Table {
-	Table := Table{}
+func CreateTables() models.Table {
+	Table := models.Table{}
 	return Table
 }
 
-func ShowPlayers(tab Table) {
+func ShowPlayers(tab models.Table) {
 	for i := 0; i < len(tab.Players); i++ {
 		fmt.Print(tab.Players[i].Name)
 		for j := 0; j < len(tab.Cards)+2; j++ {
