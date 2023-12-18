@@ -77,34 +77,6 @@ func Flash(pl *Pl.Player, cm map[string]int) {
 	}
 }
 
-func Triple(pl *Pl.Player) {
-	i := 0
-	for i < len(pl.Cards)-2 {
-		if pl.Cards[i].Rank == pl.Cards[i+1].Rank && pl.Cards[i+1].Rank == pl.Cards[i+2].Rank {
-			*&pl.WinCombination = 3
-			trip++
-		}
-		i++
-	}
-}
-
-func Double(pl *Pl.Player) {
-	i := 0
-	ch := 0
-	for i < len(pl.Cards)-1 {
-		if pl.Cards[i].Rank == pl.Cards[i+1].Rank {
-			ch++
-			DD++
-		}
-		i++
-	}
-	if ch == 1 {
-		*&pl.WinCombination = 1
-	} else if ch == 2 {
-		*&pl.WinCombination = 2
-	}
-}
-
 func Street(pl *Pl.Player) {
 	i := 0
 	for i < len(pl.Cards)-4 {
@@ -122,7 +94,32 @@ func Street(pl *Pl.Player) {
 }
 
 func Fullhouse(pl *Pl.Player) {
-	if DD == 1 && trip == 1 {
+
+	i := 0
+	ch := 0
+	for i < len(pl.Cards)-1 {
+		if pl.Cards[i].Rank == pl.Cards[i+1].Rank {
+			ch++
+			DD++
+		}
+		i++
+	}
+	if ch == 1 {
+		*&pl.WinCombination = 1
+	} else if ch == 2 {
+		*&pl.WinCombination = 2
+	}
+
+	i = 0
+	for i < len(pl.Cards)-2 {
+		if pl.Cards[i].Rank == pl.Cards[i+1].Rank && pl.Cards[i+1].Rank == pl.Cards[i+2].Rank {
+			*&pl.WinCombination = 3
+			trip++
+		}
+		i++
+	}
+
+	if DD > 0 && trip > 0 {
 		*&pl.WinCombination = 6
 	}
 }

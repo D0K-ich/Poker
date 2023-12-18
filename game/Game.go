@@ -34,8 +34,6 @@ func Startgame(table *Tb.Table, pl *Pl.Player) {
 
 func Endgame(pl *Pl.Player, t Tb.Table) {
 
-	Com.Double(*&pl)
-	Com.Triple(*&pl)
 	Com.Street(*&pl)
 	Com.Flash(*&pl, Com.GetSuitMap(t))
 	Com.Fullhouse(*&pl)
