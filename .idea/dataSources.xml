@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Poker_Data_Base" uuid="30c900bc-958e-42ac-9e91-9a0238182309">
+    <data-source source="LOCAL" name="PokerDB" uuid="d3bbb882-a3a8-4dac-b2ca-189c7beb6165">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$USER_HOME$/GolandProjects/ParserPB/Poker_Data_Base</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/PokerDB</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
