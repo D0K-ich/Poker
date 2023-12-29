@@ -44,9 +44,6 @@ func (Player) AddNewPlayer(cash int, name string) Player {
 
 //------------------------------------------------------------------------------
 
-func (Card) MyCard() Card {
-	return Card{}
-}
 func (Card) GiveCard(pl1 *Player, Cards Card) {
 	*&pl1.Cards = append(*&pl1.Cards, Cards)
 }

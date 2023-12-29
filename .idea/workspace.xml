@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf39b9a0-5979-4f82-96da-aa87b3293280" name="Changes" comment="Check to work DB">
-      <change afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/models/models.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/packages/game/Game.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/packages/utilites/utilites.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/storage/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30c900bc-958e-42ac-9e91-9a0238182309.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30c900bc-958e-42ac-9e91-9a0238182309/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165.xml" afterDir="false" />
+    <list default="true" id="bf39b9a0-5979-4f82-96da-aa87b3293280" name="Changes" comment="Large resrtuct file sistem end fix all env. Add space for logger and config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PokerDB" beforeDir="false" afterPath="$PROJECT_DIR$/internal/storage/PokerDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/internal/docs/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card/Cards.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/combinations/Combinations.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/packages/combinations/Combinations.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deck/Deck.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/Game.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/Player.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table/Table.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/packages/table/Table.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/models/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/models.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702902831534</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Large resrtuct file sistem end fix all env. Add space for logger and config">
+      <option name="closed" value="true" />
+      <created>1702918175515</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702918175515</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +185,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Checl to work DB" />
     <MESSAGE value="Check to work DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check to work DB" />
+    <MESSAGE value="Large resrtuct file sistem end fix all env. Add space for logger and config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Large resrtuct file sistem end fix all env. Add space for logger and config" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
