@@ -15,6 +15,7 @@ type Player struct {
 	Name           string
 	Cards          []Card
 	WinCombination int
+	HighestCard    Card
 }
 type Table struct {
 	Cards   []Card
@@ -29,7 +30,7 @@ type Deck struct {
 var Ranks = utilites.GetRange(2, 10)
 var Suite = utilites.SetSuyts()
 
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------Table
 
 func (Table) JoinPlayer(player *Player, table *Table) {
 	*&table.Players = append(*&table.Players, *player)
@@ -42,7 +43,7 @@ func (Table) AddNewPlayer(cash int, name string) Player {
 	return PlayerNew
 }
 
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------Card
 
 func (Card) GiveCard(pl1 *Player, Cards Card) {
 	*&pl1.Cards = append(*&pl1.Cards, Cards)
@@ -57,18 +58,8 @@ func (Card) GetScore(cd Card) int {
 	}
 	return score
 }
-func (Card) GetSuite(cd Card) string {
-	S := ""
-	v := cd.Suite
-	for i := 0; i < 4; i++ {
-		if v == Suite[i] {
-			S = Suite[i]
-		}
-	}
-	return S
-}
 
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------Deck
 
 func (Deck) ShuffleDeck(Deck []Card) {
 	rand.Seed(time.Now().UnixNano())

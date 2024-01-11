@@ -2,11 +2,10 @@ package Combinations
 
 import (
 	"Poker/internal/models"
-
 	"sort"
 )
 
-var para, trip = 0, 0
+var fl, str, help = 0, 0, 0
 
 func SortCards(pl *models.Player) {
 	i := 0
@@ -70,7 +69,9 @@ func Flash(pl *models.Player, cm map[string]int) {
 	for range cm {
 
 		if cm[pl.Cards[i].Suite] == 5 {
-			*&pl.WinCombination = 5
+			*&pl.WinCombination = 6
+			fl++
+			return
 		}
 		i++
 	}
@@ -83,7 +84,10 @@ func Street(pl *models.Player) {
 			if (models.Card{}.GetScore(pl.Cards[i+1])+1 == models.Card{}.GetScore(pl.Cards[i+2])) {
 				if (models.Card{}.GetScore(pl.Cards[i+2])+1 == models.Card{}.GetScore(pl.Cards[i+3])) {
 					if (models.Card{}.GetScore(pl.Cards[i+3])+1 == models.Card{}.GetScore(pl.Cards[i+4])) {
-						*&pl.WinCombination = 4
+						*&pl.WinCombination = 5
+						help = i
+						str++
+						return
 					}
 				}
 			}
@@ -93,31 +97,83 @@ func Street(pl *models.Player) {
 }
 
 func Fullhouse(pl *models.Player) {
+	var para, trip = 0, 0
+	if *&pl.WinCombination > 2 {
+		return
+	}
 
+	//------------------------------------------------------------------------------ StreetFlush
+	if str == 1 && fl == 1 {
+		if pl.Cards[help].Rank == "10" && pl.Cards[help].Suite == pl.Cards[help+1].Suite {
+			if pl.Cards[+1].Rank == "J" && pl.Cards[help].Suite == pl.Cards[help+2].Suite {
+				if pl.Cards[help+2].Rank == "Q" && pl.Cards[help].Suite == pl.Cards[help+3].Suite {
+					if pl.Cards[help+3].Rank == "K" && pl.Cards[help].Suite == pl.Cards[help+4].Suite {
+						if pl.Cards[help+4].Rank == "A" && pl.Cards[help].Suite == pl.Cards[help].Suite {
+							*&pl.WinCombination = 10
+							return
+						}
+					}
+				}
+			}
+		}
+		*&pl.WinCombination = 9
+		return
+	}
+
+	//------------------------------------------------------------------------------ Kare
 	i := 0
+	for i < len(pl.Cards)-3 {
+		if pl.Cards[i].Rank == pl.Cards[i+1].Rank && pl.Cards[i+1].Rank == pl.Cards[i+2].Rank && pl.Cards[i+2].Rank == pl.Cards[i+3].Rank {
+			*&pl.WinCombination = 8
+			return
+		}
+		i++
+	}
+	//------------------------------------------------------------------------------ FullHouse
+	i = 0
 	for i < len(pl.Cards)-2 {
 		if pl.Cards[i].Rank == pl.Cards[i+1].Rank && pl.Cards[i+1].Rank == pl.Cards[i+2].Rank {
-			*&pl.WinCombination = 3
 			trip++
-			break
+			*&pl.Cards = append(pl.Cards[:i], pl.Cards[i+2:]...)
 		}
 		i++
 	}
 
 	i = 0
 	for i < len(pl.Cards)-1 {
-		if pl.Cards[i].Rank == pl.Cards[i+1].Rank {
-			para++
-			break
+		if pl.Cards[i].GetScore(pl.Cards[i]) == pl.Cards[i].GetScore(pl.Cards[i+1]) {
+			para += 1
+		}
+		if trip == 1 && para == 1 {
+			*&pl.WinCombination = 7
+			return
 		}
 		i++
 	}
-	if para == 1 {
-		*&pl.WinCombination = 1
+	//------------------------------------------------------------------------------Triple
+	if trip == 1 && para != 1 {
+		*&pl.WinCombination = 4
 		return
-	} else if para == 2 {
+	}
+
+	i = 0
+	//------------------------------------------------------------------------------Para / Rockets
+	if para == 1 {
 		*&pl.WinCombination = 2
 		return
+	} else if para == 2 {
+		*&pl.WinCombination = 3
+		return
+	} else if para == 3 {
+		*&pl.WinCombination = 2
+		return
+	}
+}
+
+func HighestCard(pl *models.Player) {
+	if pl.WinCombination == 0 {
+		*&pl.HighestCard = pl.Cards[6]
+		*&pl.WinCombination = 1
 	}
 
 }

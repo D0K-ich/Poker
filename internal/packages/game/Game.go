@@ -8,7 +8,7 @@ import (
 
 var MainDeck = models.Deck{}.CreateDeck()
 
-func Startgame(table *models.Table, pl *models.Player) {
+func Startgame(table *models.Table, pl *[]models.Player) {
 	for i := 0; i < 1; i++ {
 		models.Card{}.GiveCard(&*pl, models.Card(models.Deck{}.Deal(MainDeck, &MainDeck)))
 		models.Card{}.GiveCard(&*pl, models.Card(models.Deck{}.Deal(MainDeck, &MainDeck)))
@@ -19,11 +19,14 @@ func Startgame(table *models.Table, pl *models.Player) {
 }
 
 func Endgame(pl *models.Player, t models.Table) {
-	Com.Street(*&pl)
+
 	Com.Flash(*&pl, Com.GetSuitMap(t))
+	Com.Street(*&pl)
 	Com.Fullhouse(*&pl)
+	Com.HighestCard(*&pl)
 	//*&pl.WinCombination = 666
-	fmt.Print(*&pl.WinCombination)
+	fmt.Println(*&pl.WinCombination)
+	fmt.Println(*&pl.HighestCard)
 }
 
 func Flop(table *models.Table) {
