@@ -6,7 +6,7 @@ import (
 	"sort"
 )
 
-var DD, trip = 0, 0
+var para, trip = 0, 0
 
 func SortCards(pl *models.Player) {
 	i := 0
@@ -95,30 +95,29 @@ func Street(pl *models.Player) {
 func Fullhouse(pl *models.Player) {
 
 	i := 0
-	ch := 0
-	for i < len(pl.Cards)-1 {
-		if pl.Cards[i].Rank == pl.Cards[i+1].Rank {
-			ch++
-			DD++
-		}
-		i++
-	}
-	if ch == 1 {
-		*&pl.WinCombination = 1
-	} else if ch == 2 {
-		*&pl.WinCombination = 2
-	}
-
-	i = 0
 	for i < len(pl.Cards)-2 {
 		if pl.Cards[i].Rank == pl.Cards[i+1].Rank && pl.Cards[i+1].Rank == pl.Cards[i+2].Rank {
 			*&pl.WinCombination = 3
 			trip++
+			break
 		}
 		i++
 	}
 
-	if DD > 0 && trip > 0 {
-		*&pl.WinCombination = 6
+	i = 0
+	for i < len(pl.Cards)-1 {
+		if pl.Cards[i].Rank == pl.Cards[i+1].Rank {
+			para++
+			break
+		}
+		i++
 	}
+	if para == 1 {
+		*&pl.WinCombination = 1
+		return
+	} else if para == 2 {
+		*&pl.WinCombination = 2
+		return
+	}
+
 }

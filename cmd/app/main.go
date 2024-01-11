@@ -11,12 +11,12 @@ var MainDeck = models.Deck{}.CreateDeck()
 
 func main() {
 	i := 0
+
 	for i == 0 {
 		table1 := Tab.CreateTables()
 
-		Danches := models.Player{}.AddNewPlayer(1000, "Danches")
-
-		models.Player{}.JoinPlayer(&Danches, &table1)
+		Danches := models.Table{}.AddNewPlayer(1000, "Danches")
+		models.Table{}.JoinPlayer(&Danches, &table1)
 		game.Startgame(&table1, &Danches)
 
 		Com.SortCards(&Danches)
@@ -25,9 +25,10 @@ func main() {
 
 		game.Endgame(&Danches, table1)
 
+		models.Deck{}.Refresh(&MainDeck)
+
 		if Danches.WinCombination == 6 {
 			i = 1
 		}
 	}
-
 }

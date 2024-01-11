@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf39b9a0-5979-4f82-96da-aa87b3293280" name="Changes" comment="Large resrtuct file sistem end fix all env. Add space for logger and config">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokerDB" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/models/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/models.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/packages/combinations/Combinations.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/packages/combinations/Combinations.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/storage/PokerDB" beforeDir="false" afterPath="$PROJECT_DIR$/internal/storage/PokerDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/storage/new_game_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/internal/database/migration/new_game_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/storage/new_user_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/internal/database/migration/new_user_database.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +81,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ov_da\Desktop\Poker\internal\database\migration" />
       <recent name="C:\Users\Ov_da\Desktop\Poker\internal\storage" />
       <recent name="C:\Users\Ov_da\Desktop\Poker\internal\TMP" />
       <recent name="C:\Users\Ov_da\Desktop\Poker\internal\docs" />
       <recent name="C:\Users\Ov_da\Desktop\Poker\cmd\app" />
-      <recent name="C:\Users\Ov_da\Desktop\Poker" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build Poker/cmd/app">
@@ -123,7 +131,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-gosdk-467a64f6063b-ee0e143f3e2b-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.11799.228" />
+        <option value="bundled-gosdk-266795519c66-911b893a1778-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.13135.104" />
       </set>
     </attachedChunks>
   </component>
@@ -176,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702918175515</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Large resrtuct file sistem end fix all env. Add space for logger and config">
+      <option name="closed" value="true" />
+      <created>1703844836732</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703844836732</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

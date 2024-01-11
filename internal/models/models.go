@@ -31,10 +31,10 @@ var Suite = utilites.SetSuyts()
 
 //------------------------------------------------------------------------------
 
-func (Player) JoinPlayer(player *Player, table *Table) {
+func (Table) JoinPlayer(player *Player, table *Table) {
 	*&table.Players = append(*&table.Players, *player)
 }
-func (Player) AddNewPlayer(cash int, name string) Player {
+func (Table) AddNewPlayer(cash int, name string) Player {
 	PlayerNew := Player{}
 	PlayerNew.Name = name
 	PlayerNew.Cash = cash
@@ -98,4 +98,17 @@ func (Deck) CreateDeck() []Card {
 
 	Deck{}.ShuffleDeck(deck)
 	return deck
+}
+
+func (Deck) Refresh(deck *[]Card) {
+	suyts := utilites.SetSuyts()
+	rank := utilites.SetRank()
+	for i := range suyts {
+		for j := range rank {
+			card := Card{suyts[i], rank[j]}
+			*deck = append(*deck, card)
+		}
+	}
+
+	Deck{}.ShuffleDeck(*deck)
 }
