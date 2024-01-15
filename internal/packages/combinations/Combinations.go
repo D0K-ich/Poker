@@ -1,4 +1,4 @@
-package Combinations
+package combinations
 
 import (
 	"Poker/internal/models"

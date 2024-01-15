@@ -2,28 +2,33 @@ package main
 
 import (
 	"Poker/internal/models"
-	Com "Poker/internal/packages/Combinations"
-	game "Poker/internal/packages/Game"
-	Tab "Poker/internal/packages/Table"
+	"Poker/internal/packages/combinations"
+	"Poker/internal/packages/game"
+	Tab "Poker/internal/packages/table"
 )
 
 var MainDeck = models.Deck{}.CreateDeck()
 
 func main() {
+
+	Test()
+}
+
+func Test() {
 	i := 0
 
 	for i == 0 {
 		table1 := Tab.CreateTables()
 
 		Danches := models.Table{}.AddNewPlayer(1000, "Danches")
-		Vanches := models.Table{}.AddNewPlayer(1000, "Vanches")
+		//Vanches := models.Table{}.AddNewPlayer(1000, "Vanches")
 
 		models.Table{}.JoinPlayer(&Danches, &table1)
-		models.Table{}.JoinPlayer(&Vanches, &table1)
+		//models.Table{}.JoinPlayer(&Vanches, &table1)
 
 		game.Startgame(&table1, &Danches)
 
-		Com.SortCards(&Danches)
+		combinations.SortCards(&Danches)
 
 		Tab.ShowPlayers(table1)
 
@@ -31,8 +36,10 @@ func main() {
 
 		models.Deck{}.Refresh(&MainDeck)
 
-		if Danches.WinCombination == 10 {
-			i = 1
+		i++
+
+		if Danches.WinCombination == 1 {
+			return
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package Table
+package table
 
 import (
 	"Poker/internal/models"
@@ -16,7 +16,6 @@ func ShowPlayers(tab models.Table) {
 		for j := 0; j < len(tab.Cards)+2; j++ {
 			fmt.Print(tab.Players[i].Cards[j])
 		}
-
 		fmt.Println()
 	}
 }

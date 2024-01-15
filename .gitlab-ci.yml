@@ -1,0 +1,32 @@
+image: golang:latest
+
+variables:
+  GOARCH: amd64
+  GOOS: linux
+  CGO_ENABLED: 0
+
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  stage: test
+  script:
+    echo "Start testing"
+
+build:
+  stage: build
+  image: golang:alpine
+  script:
+    - go build -o ./build/cmd/app
+  artifacts:
+    paths:
+      - ./build/cmd/app
+
+
+deploy:
+  stage: deploy
+  script: echo "Define your deployment script!"
+  environment: production
+

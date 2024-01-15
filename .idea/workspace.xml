@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf39b9a0-5979-4f82-96da-aa87b3293280" name="Changes" comment="Checl to work DB">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3bbb882-a3a8-4dac-b2ca-189c7beb6165/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+    <list default="true" id="bf39b9a0-5979-4f82-96da-aa87b3293280" name="Changes" comment="Final all combinate (not tested only street flush)">
+      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.dev.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models/models.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/models.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/packages/combinations/Combinations.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/packages/combinations/Combinations.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/packages/game/Game.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/packages/game/Game.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/packages/table/Table.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/packages/table/Table.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +30,17 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2Yx876cEP6wyd6PAMd9Rf3S1l9o" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Docker.Unnamed.executor": "Run",
     "Go Build.go build Poker main.go.executor": "Run",
     "Go Build.go build Poker.executor": "Run",
     "Go Build.go build main.go.executor": "Run",
@@ -50,7 +54,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Programming/Poker/cmd/app/main.go",
+    "last_opened_file_path": "C:/Programming/Poker/Dockerfile",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
@@ -63,10 +67,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Programming\Poker" />
       <recent name="C:\Users\Ov_da\Desktop\Poker" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.Unnamed">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="Poker" />
       <working_directory value="$PROJECT_DIR$" />
@@ -124,6 +129,20 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="containerName" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.Unnamed" />
+      <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Build.go build Poker" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -172,8 +191,10 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Checl to work DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checl to work DB" />
+    <MESSAGE value="Final all combinate (not tested only street flush)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final all combinate (not tested only street flush)" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
